@@ -1,0 +1,368 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #263445;
+    min-height: 100vh;
+}
+
+
+
+.navbar {
+    height: 65px;
+    width: 100%;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-button {
+    border: none;
+    background: transparent;
+    color: #34465a;
+
+    font-size: 27px;
+    cursor: pointer;
+    padding: 5px;
+    width: 42px;
+    text-align: left;
+}
+
+.logo {
+    text-decoration: none;
+    color: #6481b0;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+}
+
+.logo span {
+    color: #39a6a0;
+    font-size: 23px;
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #d6dce5;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #34465a;
+    font-size: 23px;
+}
+
+
+.page-layout {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    min-height: calc(100vh - 65px);
+}
+
+
+.sidebar {
+    flex: 0 0 0;
+    width: 0;
+    min-width: 0;
+
+    overflow: hidden;
+    visibility: hidden;
+
+    background: #f3f6fc;
+    border-right: 0 solid #dce4f0;
+
+    transition:
+        width 0.25s ease,
+        flex-basis 0.25s ease,
+        min-width 0.25s ease,
+        padding 0.25s ease,
+        border-width 0.25s ease,
+        visibility 0.25s;
+}
+
+.sidebar h3 {
+    color: #6481b0;
+    font-size: 13px;
+    margin: 0 8px 20px;
+    white-space: nowrap;
+}
+
+.menu-link {
+    display: block;
+    width: 100%;
+
+    padding: 13px 10px;
+    margin-bottom: 7px;
+
+    border-radius: 7px;
+
+    color: #34465a;
+    text-decoration: none;
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.menu-link span {
+    display: inline-block;
+    width: 22px;
+}
+
+.menu-link:hover {
+    background: #dce8fa;
+    color: #245b9b;
+}
+
+
+
+.page-layout.menu-open .sidebar {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 220px;
+
+    padding: 24px 12px;
+
+    visibility: visible;
+    border-right-width: 1px;
+}
+
+
+
+.main-content {
+    flex: 1 1 0;
+    min-width: 0;
+
+    padding: 8px;
+    transition: none;
+}
+
+
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 440px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 7px;
+
+    background-color: #87a7e6;
+
+    /* Hospital image with blue overlay */
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(73, 117, 218, 0.86),
+            rgba(103, 145, 229, 0.48)
+        ),
+        url("hospital.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 540px;
+
+    padding: 35px;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    font-weight: bold;
+
+    margin-bottom: 22px;
+}
+
+.hero-content p {
+    font-size: 17px;
+    line-height: 1.55;
+
+    margin-bottom: 30px;
+}
+
+.booking-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 17px 22px;
+
+    background: #3769aa;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+
+    border-radius: 3px;
+
+    transition: background 0.2s ease;
+}
+
+.booking-button:hover {
+    background: #24528f;
+}
+
+.booking-button span {
+    font-size: 17px;
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 55px;
+        padding: 0 10px;
+    }
+
+    .menu-button {
+        width: 35px;
+        font-size: 25px;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .logo span {
+        font-size: 19px;
+    }
+
+    .profile-button {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .page-layout {
+        min-height: calc(100vh - 55px);
+    }
+
+    /* Smaller sidebar on mobile */
+
+    .page-layout.menu-open .sidebar {
+        flex: 0 0 145px;
+        width: 145px;
+        min-width: 145px;
+
+        padding: 18px 7px;
+    }
+
+    .sidebar h3 {
+        font-size: 11px;
+        margin-left: 7px;
+    }
+
+    .menu-link {
+        padding: 12px 6px;
+        font-size: 11px;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .menu-link span {
+        width: 18px;
+    }
+
+    .main-content {
+        padding: 6px;
+    }
+
+    .hero {
+        min-height: 440px;
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero-content {
+        padding: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .booking-button {
+        padding: 13px 14px;
+        gap: 7px;
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .page-layout.menu-open .sidebar {
+        flex-basis: 125px;
+        width: 125px;
+        min-width: 125px;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 23px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .booking-button {
+        padding: 11px 9px;
+        font-size: 9px;
+    }
+}

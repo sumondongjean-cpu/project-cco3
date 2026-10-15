@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medic Care | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <a href="index.html" class="logo">
+            MEDIC CARE <span>✚</span>
+        </a>
+
+        <a href="login.html" class="profile-button" aria-label="Login">
+            ♙
+        </a>
+
+    </header>
+
+    <!-- Main Layout -->
+    <div class="page-layout" id="pageLayout">
+
+        <!-- Side Menu -->
+        <aside class="sidebar" id="sidebar" aria-hidden="true">
+
+            <h3>MENU</h3>
+
+            <a href="index.html" class="menu-link">
+                <span>⌂</span> Home
+            </a>
+
+            <a href="login.html" class="menu-link">
+    <span>▣</span> Book Appointment
+            </a>
+
+            <a href="login.html" class="menu-link">
+                <span>♙</span> Login
+            </a>
+
+        </aside>
+
+        <!-- Homepage Content -->
+        <main class="main-content" id="mainContent">
+
+            <!-- Hero Section -->
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <h1>
+                        A Great Place Care<br>
+                        for yourself
+                    </h1>
+
+                    <p>
+                        Our public medical facility is deeply
+                        committed to delivering accessible,
+                        safe, and professional healthcare
+                        solutions straight to your community.
+                    </p>
+
+                    <a href="login.html" class="booking-button">
+                        BOOK APPOINTMENT <span>→</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Side Menu Function -->
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const pageLayout = document.getElementById("pageLayout");
+        const sidebar = document.getElementById("sidebar");
+
+        menuButton.addEventListener("click", function () {
+
+            const isOpen = pageLayout.classList.toggle("menu-open");
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close menu" : "Open menu"
+            );
+
+            sidebar.setAttribute("aria-hidden", String(!isOpen));
+
+        });
+    </script>
+
+</body>
+</html>
